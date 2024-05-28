@@ -87,7 +87,7 @@ static void sdramc_ck_delay(unsigned long ck)
  *         SDRAMC.
  */
 #if BOARD == EVK1100 || BOARD == EVK1104 || BOARD == EVK1105 \
- || BOARD == MIZAR32
+    || BOARD == MIZAR32 || BOARD == ALEPH
 static void sdramc_enable_muxed_pins(void)
 {
   static const gpio_map_t SDRAMC_EBI_GPIO_MAP =
@@ -144,7 +144,7 @@ static void sdramc_enable_muxed_pins(void)
 
   gpio_enable_module(SDRAMC_EBI_GPIO_MAP, sizeof(SDRAMC_EBI_GPIO_MAP) / sizeof(SDRAMC_EBI_GPIO_MAP[0]));
 }
-#elif BOARD == UC3C_EK 
+#elif BOARD == UC3C_EK
 static void sdramc_enable_muxed_pins(void)
 {
   static const gpio_map_t SDRAMC_EBI_GPIO_MAP =

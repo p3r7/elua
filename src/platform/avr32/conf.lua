@@ -12,6 +12,9 @@ elseif comp.board:upper()  == "ATEVK1101" then
 elseif comp.board:upper():sub( 1,7 )  == "MIZAR32" then
   specific_files = specific_files .. " sdramc.c"
   addm( 'BOARD=98' )
+elseif comp.board:upper()  == "ALEPH" then
+  specific_files = specific_files .. " sdramc.c"
+  addm( 'BOARD=413' )
 else
   print( sf( "Invalid board for %s platform (%s)", platform, comp.board ) )
   os.exit( -1 )
@@ -82,4 +85,3 @@ tools.avr32.prog_flist = { output .. ".hex" }
 
 -- We use 'gcc' as the assembler
 toolset.asm = toolset.compile
-
